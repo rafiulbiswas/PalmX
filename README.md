@@ -33,13 +33,6 @@ transformers>=4.30.0
 datasets>=2.12.0
 peft>=0.4.0
 bitsandbytes>=0.39.0
-
-# Additional requirements
-pandas>=1.5.0
-numpy>=1.21.0
-scikit-learn>=1.2.0
-matplotlib>=3.5.0
-tqdm>=4.64.0
 ```
 
 ## 🛠️ Installation
@@ -162,24 +155,6 @@ D. {example['D']}
 <|im_end|>
 <|im_start|>assistant
 {example['answer']}<|im_end|>"""
-```
-
-### Memory Management
-```python
-# Clear GPU cache regularly
-torch.cuda.empty_cache()
-gc.collect()
-
-# Monitor GPU memory
-print(f"GPU Memory: {torch.cuda.memory_allocated()/1e9:.2f}GB")
-```
-
-### Error Analysis
-```python
-# Analyze model errors
-error_analysis = ft.analyze_errors(results, eval_data)
-print(f"Error distribution: {error_analysis['by_answer']}")
-print(f"Difficult questions: {len(error_analysis['difficult_questions'])}")
 ```
 
 ## 📄 License
